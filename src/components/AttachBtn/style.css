@@ -1,0 +1,14 @@
+.attachBtn {
+  width: fit-content;
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+line-height: 20px;
+
+color: #0055FB;
+}
+
+.attachBtn_text {
+  margin-left: 5px;
+}

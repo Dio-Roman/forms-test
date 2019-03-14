@@ -1,0 +1,79 @@
+.sender {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+/* height: 630px; */
+  background: #FFFFFF;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+border-radius: 5px;
+padding-bottom: 30px;
+padding-left: 30px;
+padding-right: 30px;
+font-family: SF Pro Text;
+}
+
+
+.sender_alertRight {
+  color: #FF6666;
+      /* position: absolute; */
+      display: flex;
+      /* align-self: end; */
+      flex-direction: row-reverse;
+      margin-top: auto;
+      margin-bottom: -20px;
+      margin-right: 25%;
+}
+
+.sender_alertLeft {
+  color: #FF6666;
+      /* position: absolute; */
+      display: flex;
+      /* align-self: end; */
+      flex-direction: row;
+      margin-top: auto;
+      margin-bottom: -20px;
+      margin-left: 1.5%;
+}
+
+.sender_form {
+  display: flex;
+  flex-direction: column;
+  /* margin-left: 30px; */
+}
+
+.sender_h1 {
+font-size: 30px;
+line-height: 40px;
+/* margin-left: 30px; */
+
+}
+
+.sender_input {
+  height: 40px;
+  margin-right: -1px;
+  padding-left: 10px;
+  width: 49%;
+  box-sizing: border-box;
+font-family: SF Pro Text;
+font-size: 18px;
+line-height: 30px;
+color: #000000;
+opacity: 0.4;
+}
+.sender_theme {
+  width: 98.5%;
+}
+
+.sender_msg {
+  width: 98.5%;
+  height: 140px;
+  resize: none;
+}
+
+.sender_label:not(:nth-child(4n)) {
+  margin-bottom: 25px;
+  font-size: 16px;
+line-height: 20px;
+color: rgba(0, 0, 0, 0.6);
+
+}
