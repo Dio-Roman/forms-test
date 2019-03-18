@@ -1,3 +1,11 @@
 .sender_delBtn {
+  display: flex;
+  margin-left: auto;
   color: #FF6666;
+  border: none;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  font-size: 16px;
 }

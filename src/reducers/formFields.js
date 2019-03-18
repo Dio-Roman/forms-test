@@ -1,4 +1,4 @@
-import {INPUT_FROM_NAME, INPUT_FROM_EMAIL, INPUT_TO_NAME, INPUT_TO_EMAIL, INPUT_THEME, INPUT_MSG} from '../constants';
+import {INPUT_FROM_NAME, INPUT_FROM_EMAIL, INPUT_TO_NAME, INPUT_TO_EMAIL, INPUT_THEME, INPUT_MSG, ATTACH_FILE, DELETE_ATTACH_FILE} from '../constants';
 
 let initialState = 
   {
@@ -8,13 +8,16 @@ let initialState =
     toEmail: '',
     theme: '',
     msg: '',
-    // validate: true,
-    // placeholder: '',
+    attaches: [
+      'nice.pdf',
+      'verycool.jpg',
+      'amazing.png',
+    ],
   }
 
 ;
 
-const formFields = (state = initialState, {type, value}) => {
+const formFields = (state = initialState, {type, value, file, id}) => {
   switch (type) {
       case INPUT_FROM_NAME :
         return {...state, fromName: value};
@@ -33,6 +36,17 @@ const formFields = (state = initialState, {type, value}) => {
 
       case INPUT_MSG :
         return {...state, msg: value};
+
+      case ATTACH_FILE :
+        let newFileArr = [file[0].name];
+        console.log(newFileArr);
+        return {...state, attaches: state.attaches.concat(newFileArr)};
+
+      case DELETE_ATTACH_FILE :
+        // let newFileArr = [file[0].name];
+        // console.log(newFileArr);
+        return {...state, attaches: state.attaches.filter(el=>el!==id)};
+        // return state;
 
         // case FETCH_SUCCESS :
         // return [ 

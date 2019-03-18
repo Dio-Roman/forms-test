@@ -4,6 +4,9 @@ import Sender from '../src/components/Sender/Sender';
 // import SendBtn from '../src/components/SendBtn/SendBtn';
 import Logo from '../src/components/Logo/Logo';
 import SendedMsg from '../src/components/SendedMsg/SendedMsg';
+import MsgInQueue from '../src/components/MsgInQueue/MsgInQueue';
+import DragAndDrop from '../src/components/DragAndDrop/DragAndDrop';
+import FileList from '../src/components/FileList/FileList';
 
 class App extends Component {
   render() {
@@ -11,8 +14,9 @@ class App extends Component {
       <>
         <Logo/>
         <Sender/>
-        {/* <AttachBtn/>
-        <SendBtn/> */}
+        {/* <MsgInQueue/> */}
+        {/* <DragAndDrop/> */}
+        {/* <FileList/> */}
         <SendedMsg/>
       </>
     );
