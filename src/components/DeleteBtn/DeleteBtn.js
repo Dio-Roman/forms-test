@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
  class DeleteBtn extends Component  {
 
   handleDelete = (e) => {
+    e.preventDefault ()
   this.props.deleteAttachFile(e.target.id);
  }
 

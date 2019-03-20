@@ -153,7 +153,7 @@ class Sender extends Component {
     return (
     <div className='sender'>
       <h1 className='sender_h1'>Отправлялка сообщений</h1>
-      <form  className='sender_form' action="https://api.sendsay.ru/clu180"method="POST" /*onSubmit={this.handleSubmit} */ encType="multipart/form-data" autoComplete="off">
+      <form  className='sender_form'/* action="https://api.sendsay.ru/clu180"method="POST"*/ /*onSubmit={this.handleSubmit} */ encType="multipart/form-data" autoComplete="off">
         <label className='sender_label sender_from '>
           От кого <br/>
           <input className='sender_input' type='text' name='from' placeholder='Имя' value={inputFrom.fromName} onChange={this.handleInput} onBlur={this.validateForm}/>
@@ -176,7 +176,7 @@ class Sender extends Component {
           Сообщение <br/>
           <textarea  className='sender_input sender_msg' name='msg' value={inputFrom.msg} onChange={this.handleInput}></textarea>
         </label>
-        <input type='submit' />
+        {/* <input type='submit' /> */}
         {/* <input type='file' /> */}
         <FileList/>
       </form>

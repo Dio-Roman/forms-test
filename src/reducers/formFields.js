@@ -13,6 +13,7 @@ let initialState =
       'verycool.jpg',
       'amazing.png',
     ],
+    files: []
   }
 
 ;
@@ -38,9 +39,11 @@ const formFields = (state = initialState, {type, value, file, id}) => {
         return {...state, msg: value};
 
       case ATTACH_FILE :
-        let newFileArr = [file[0].name];
-        console.log(newFileArr);
-        return {...state, attaches: state.attaches.concat(newFileArr)};
+      // let newFileArr = [file[0].name];
+        // let newFileArr = [file[0]];
+        console.log(file[0]);
+        // return {...state, attaches: state.attaches.concat(newFileArr)};
+        return {...state, files: [...state.files, file[0]]}; 
 
       case DELETE_ATTACH_FILE :
         // let newFileArr = [file[0].name];
