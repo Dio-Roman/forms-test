@@ -13,12 +13,10 @@ let initialState =
       'verycool.jpg',
       'amazing.png',
     ],
-    files: []
-  }
+    files: {}
+  };
 
-;
-
-const formFields = (state = initialState, {type, value, file, id}) => {
+const formFields = (state = initialState, {type, value, file, data, id}) => {
   switch (type) {
       case INPUT_FROM_NAME :
         return {...state, fromName: value};
@@ -39,17 +37,14 @@ const formFields = (state = initialState, {type, value, file, id}) => {
         return {...state, msg: value};
 
       case ATTACH_FILE :
-      // let newFileArr = [file[0].name];
-        // let newFileArr = [file[0]];
-        console.log(file[0]);
-        // return {...state, attaches: state.attaches.concat(newFileArr)};
-        return {...state, files: [...state.files, file[0]]}; 
+      let newFileArr = [file.name];
+        // console.log(file.name);
+      return {...state, attaches: state.attaches.concat(newFileArr), files: {...state.files, [file.name] : data}}
 
       case DELETE_ATTACH_FILE :
-        // let newFileArr = [file[0].name];
         // console.log(newFileArr);
+        delete state.files[id];
         return {...state, attaches: state.attaches.filter(el=>el!==id)};
-        // return state;
 
         // case FETCH_SUCCESS :
         // return [ 

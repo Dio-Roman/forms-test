@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {attachFile} from '../../actions/actionCreator';
 
 import './style.css';
+import { format } from 'util';
 
 
 
@@ -11,7 +12,8 @@ import './style.css';
 class DragAndDrop extends Component  {
   state = {
     dragging: false,
-    fileSize: 0  // 20971520 Byte total
+    fileSize: 0,  // 20971520 Byte total
+    addedFiles: []
   }
 
   dropRef = React.createRef();
@@ -62,17 +64,27 @@ class DragAndDrop extends Component  {
     e.preventDefault()
     e.stopPropagation()
     this.setState({dragging: false})
+     
     if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-
       if  (e.dataTransfer.files[0].size<=5242880){   //validation total files size per letter
         if  (this.state.fileSize+e.dataTransfer.files[0].size<=20971520){     //validation file size
                 this.setState({fileSize: this.state.fileSize + e.dataTransfer.files[0].size})
-                this.props.attachFile(e.dataTransfer.files);
+
+                let transferFile = e.dataTransfer.files[0];
+
+                let add= new FileReader ();
+                add.readAsDataURL(transferFile);
+                add.onload = () => {
+                    let data = add.result;
+                    const arrFromData = Array.of(data);
+                    // console.log('file', res);
+                    // console.log('arr from file', filesArray);
+                     this.setState({  addedFiles: this.state.addedFiles.concat(arrFromData)    },
+                     ()=> {this.props.attachFile(transferFile,arrFromData)})
+                  };
+                  
               }  else { alert('Нельзя прикрепить больше 20 Мб к одному письму !!!') }
-      } else {alert(' Размер файла превышает 5 Мб!!!')}
-      // console.log(e.dataTransfer.files[0])
-      e.dataTransfer.clearData()
-      // this.dragCounter = 0
+      } else {alert(' Размер файла превышает 5 Мб!!!')} 
     }
   }
 
