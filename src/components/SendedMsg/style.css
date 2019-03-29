@@ -6,14 +6,13 @@ div {
 
 table {
   width: inherit;
-  border-collapse:collapse;
+  border-collapse: collapse;
   line-height: 25px;
 }
 
 .table_head {
   border-bottom: 1px solid rgb(65, 63, 63);
   color: rgb(160, 158, 158);
-
 }
 
 th:nth-child(1) {
@@ -28,10 +27,9 @@ th:not(:nth-child(3)) {
   text-align: left;
   font-family: SF Pro Text;
   line-height: 25px;
-  /* color: rgb(160, 158, 158); */
 }
 
-th:nth-child(3){
+th:nth-child(3) {
   text-align: end;
   font-family: SF Pro Text;
   line-height: 25px;
@@ -39,20 +37,18 @@ th:nth-child(3){
 
 td:nth-child(3) {
   text-align: end;
-
 }
 
 .table_status-sended {
- color:  #03A100;
+  color: #03a100;
 }
 .table_status-queue {
   color: rgb(160, 158, 158);
-  ;
- }
- .table_status-error {
-  color:  #FF6666;
- }
+}
+.table_status-error {
+  color: #ff6666;
+}
 
- tr {
+tr {
   height: 30px;
- }
+}

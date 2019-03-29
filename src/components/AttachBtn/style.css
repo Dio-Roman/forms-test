@@ -5,9 +5,8 @@
   border: none;
   cursor: pointer;
   font-size: 16px;
-line-height: 20px;
-
-color: #0055FB;
+  line-height: 20px;
+  color: #0055fb;
 }
 
 .attachBtn_text {
@@ -15,14 +14,11 @@ color: #0055FB;
 }
 
 .attachBtn:focus {
-  border: 2px solid #45A5FF;
-border-radius: 7px;
-outline: none;
-/* background: linear-gradient(180deg, #45A6FF 0%, #0055FB 100%), #C4C4C4; */
-
+  border: 2px solid #45a5ff;
+  border-radius: 7px;
+  outline: none;
 }
 
 .attachBtn:hover {
   color: rgb(41, 112, 255);
-
 }
